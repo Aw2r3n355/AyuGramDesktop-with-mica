@@ -512,6 +512,9 @@ void MainWindow::init() {
 	updateTitle();
 	updateWindowIcon();
 }
+#ifdef Q_OS_WIN
+    Ayu::Transparency::EnableMicaTransparency((HWND)winId());
+#endif
 
 void MainWindow::handleStateChanged(Qt::WindowState state) {
 	stateChangedHook(state);
